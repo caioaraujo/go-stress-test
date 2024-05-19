@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  app:
+    restart: always
+    container_name: stress-test
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["stress-test"]
