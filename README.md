@@ -10,6 +10,8 @@ Onde:
 - concurrency: Total de concorrências onde as requisições serão distribuídas.
 
 ### Docker
-Alternativamente é possível executar via Docker:
+Alternativamente é possível executar via Docker.
+
+`docker-compose up --build`
 
 `docker run stress-test --url={URL} --requests={REQUESTS} --concurrency={CONCURRENCY}`

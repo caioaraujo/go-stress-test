@@ -14,9 +14,9 @@ var rootCmd = &cobra.Command{
 	Use:   "go-stress-test",
 	Short: "Teste de carga em servidor WEB",
 	Long: `Aplicação de teste de carga em servidor WEB. Parâmetros:
-	-url: exemplo, http://www.google.com ;
-	-requests: total de requisições. Exemplo, 100;
-	-concurrency: quantidade de concorrências. Exemplo: 5.`,
+	--url: exemplo, http://www.google.com ;
+	--requests: total de requisições. Exemplo, 100;
+	--concurrency: quantidade de concorrências. Exemplo: 5.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		url, err := cmd.Flags().GetString("url")
 		if err != nil {

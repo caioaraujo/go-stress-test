@@ -10,7 +10,6 @@ RUN go mod verify && \
 
 COPY . .
 
-RUN CGO_ENABLED=0 go build -o bin/stress-test main.go
+RUN CGO_ENABLED=0 go build -o stress-test
 
-FROM alpine:3.19
-COPY --from=builder /app/bin/stress-test /usr/bin/stress-test
+ENTRYPOINT [ "./stress-test" ]
