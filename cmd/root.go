@@ -71,7 +71,9 @@ var rootCmd = &cobra.Command{
 					resp, err := http.Get(url)
 					if err != nil {
 						cmd.PrintErrln("Erro ao realizar requisição:", err)
-						os.Exit(1)
+						if resp == nil {
+							panic(err)
+						}
 					}
 					reqTotalRealizadas++
 					if resp.StatusCode == http.StatusOK {
